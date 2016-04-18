@@ -41,6 +41,8 @@ namespace ToDoList
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseStaticFiles();
         }
 
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);
