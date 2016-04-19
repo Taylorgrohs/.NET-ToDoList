@@ -11,7 +11,12 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
-    <input type="submit" value="Add new task" />
+    //TextBoxFor to editor, idk why
+    @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.CategoryId)
+    @Html.DropDownList("CategoryId")
+
+    <input type="submit" value="Create" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>

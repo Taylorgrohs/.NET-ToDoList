@@ -4,25 +4,47 @@
 }
 @model IEnumerable<ToDoList.Models.Item>
 
+<div class="container">
+    <h2>To Do List</h2>
+    <hr />
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th></th>
+        </tr>
 
-<h2>To Do List</h2>
-<hr />
-<h4>@Html.DisplayNameFor(model => model.Description)</h4>
-<ul>
-    @foreach (var listItem in Model)
-    {
-        <li>@Html.DisplayFor(modelItem => listItem.Description) | @Html.ActionLink("Details", "Details", new { id = listItem.ItemId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.ItemId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.ItemId })
-            
-    
-    @using (@Html.BeginForm("Done", "Items", new { id = listItem.ItemId }))
+        @foreach (var listItem in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => listItem.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => listItem.Category.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = listItem.ItemId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = listItem.ItemId })  |
+                    @Html.ActionLink("Delete", "Delete", new { id = listItem.ItemId })
+                </td>
+                <td>
+                @using (@Html.BeginForm("Done", "Items", new { id = listItem.ItemId }))
                 {
-                @Html.HiddenFor(modelItem => listItem.ItemId)
+                    @Html.HiddenFor(modelItem => listItem.ItemId)
 
-                @Html.CheckBoxFor(modelItem => listItem.Done, new { onclick = "this.form.submit();" })
-            }
+                    @Html.CheckBoxFor(modelItem => listItem.Done, new { onclick = "this.form.submit();" })
+                }
+                </td>
+            </tr>
+        }
+        </table>
 
-    </li>
 
-    }
-</ul>
-<p>@Html.ActionLink("Add new item", "Create")</p>
+
+    <p>@Html.ActionLink("Add new item", "Create")</p>
+</div>
