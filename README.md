@@ -23,10 +23,10 @@ _No known bugs!_
 - Microsoft Sql Server Management Studio
 
 ## Support and contact details
-_If any contact is needed you can reach me at my email at cho-andrew@hotmail.com_
+_If any contact is needed you can reach me at my email at taylorgrohs@gmail.com_
 
 ### License
 
 *This software is licensed under the MIT license.*
 
-Copyright (c) 2016 **By Andrew Cho**
+Copyright (c) 2016 **By Taylor Grohs**
