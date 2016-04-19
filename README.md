@@ -7,10 +7,10 @@
 _This web application is an updated version of the to do list previously made to create a list of things to do!(Create, Update, Delete your items). We included a one to many relationship with categories having many items._
 
 ## Setup/Installation Requirements
--Clone the repository.
--Open in visual studio.
--Import database file.
--Start express server.
+* Clone the repository.
+* Open in visual studio.
+* Import database file.
+* Start express server.
 
 ## Known Bugs
 _No known bugs!_
